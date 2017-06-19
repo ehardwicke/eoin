@@ -1,0 +1,21 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+h1 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.checkcent{
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+ul{
+	text-align center; 
+	vertical-align: middle;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="toDo.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+ 
+
+
+  </head>
+  <body>
+    <span class="text-center"> <h2>Todo List</h2> </span>
+    <div ng-controller="todoListController as todoList">
+      <div class="text-center"> <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      [ <a href="" ng-click="todoList.archive()">archive</a> ]
+      </div>
+      <ul class>
+        <li ng-repeat="todo in todoList.todos">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </label>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTodo()">
+        <input data-type="text" data-mini="true" ng-model="todoList.todoText"  size="30" placeholder="add new todo here">
+        <input data-type="button" data-mini="true" type="submit" data-icon="plus" value="add">
+      </form>
+    </div>
+  </body>
+
+  <script src="angular.min.js"></script>
+  <script src="toDo.js"></script>
+ <script src="jquery-1.11.1.js"></script>
+  <script src="jquery.mobile-1.4.5.min.js"></script>
+</html>
